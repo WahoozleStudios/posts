@@ -19,9 +19,13 @@ def signup():
 def help():
     return render_template('help.html')
 
-@app.route('/home/b')
+@app.route('/home/b/')
 def homeBlank():
     return render_template("homeBlank.html")
+
+@app.route('/home')
+def homeRedirect():
+    return render_template('redirectHome.html')
 
 if __name__ == '__main__':
     app.run()
