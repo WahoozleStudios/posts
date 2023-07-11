@@ -18,7 +18,11 @@ def signup():
 @app.route('/help')
 def help():
     return render_template('help.html')
-    
+
+@app.route('/home/b')
+def homeBlank():
+    return render_template("homeBlank.html")
+
 if __name__ == '__main__':
-    app.run(host="86.170.72.128")
+    app.run()
 
