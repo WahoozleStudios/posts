@@ -11,23 +11,36 @@
         body {
             font-family: "Assistant", sans-serif;
             background-color: #ececec;
+            text-align: center; /* Added text-align center to align content */
+        }
+        h1 {
+            margin-top: 50px; /* Added margin-top for better positioning */
+        }
+        input {
+            margin: 10px; /* Added margin for better spacing */
+            padding: 5px; /* Added padding for better appearance */
+        }
+        button {
+            padding: 10px 20px; /* Added padding for better appearance */
         }
     </style>
 </head>
 <body>
-    <h1 align="center">Login - posts</h1>
-    <input type="text" id="usernameInput" placeholder="Username :">
-    <input type="password" id="passwordInput" placeholder="Password :">
+    <h1>Login - posts</h1>
+    <input type="text" id="usernameInput" placeholder="Username">
+    <br> <!-- Added line break for better spacing -->
+    <input type="password" id="passwordInput" placeholder="Password">
+    <br> <!-- Added line break for better spacing -->
     <button id="signIn" onclick="signIn()">Sign In</button>
     <script>
         function signIn() {
             var usernameInput = document.getElementById("usernameInput").value;
             var passwordInput = document.getElementById("passwordInput").value;
-            var newUrl = '?user=' + encodeURIComponent(usernameInput);
-            var endUrl = "/home/b" + newUrl;
+            var newUrl = '/home/b?user=' + encodeURIComponent(usernameInput); // Modified URL construction
 
-            window.location.replace(endUrl);
+            window.location.href = newUrl; // Replaced window.location.replace with window.location.href
         }
     </script>
 </body>
 </html>
+
