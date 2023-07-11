@@ -1,19 +1,51 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Sign Up | posts</title>
     <style>
         @font-face {
             font-family: "Assistant";
-            src: url(fonts/Assistant/Assistant-VariableFont_wght.ttf);
+            src: url(/static/fonts/Assistant/Assistant-VariableFont_wght.ttf);
         }
         body {
             font-family: "Assistant", sans-serif;
             background-color: #ececec;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #inputs {
+            width: 90%;
+            text-align: center;
+        }
+        #signUpButton {
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            border: none;
+            background-color: #f2f2f2;
+            color: #333;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        #signUpButton:hover {
+            background-color: #e0e0e0;
+        }
+        #signUpButton:focus {
+            outline: none;
         }
     </style>
 </head>
 <body>
     <h1 align="center">Sign Up - posts</h1>
+    <p align="center">Enter details to create an account with posts.</p>
+    <div id="inputs">    
+        <br><br><input placeholder="Username :">
+        <br><br><input placeholder="Password :">
+        <br><button id="signUpButton">Sign Up</button>
+    </div>
 </body>
 </html>

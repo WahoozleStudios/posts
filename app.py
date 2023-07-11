@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import requests
 
 app = Flask(__name__)
 
@@ -19,4 +20,5 @@ def help():
     return render_template('help.html')
     
 if __name__ == '__main__':
-    app.run()
+    app.run(host="86.170.72.128")
+
