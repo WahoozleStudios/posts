@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<hmtl>
+<html>
 <head>
     <title>Login | posts</title>
     <link rel="icon" type="image/png" href="templates/imgs/favicon.ico">
@@ -16,5 +16,18 @@
 </head>
 <body>
     <h1 align="center">Login - posts</h1>
+    <input type="text" id="usernameInput" placeholder="Username :">
+    <input type="password" id="passwordInput" placeholder="Password :">
+    <button id="signIn" onclick="signIn()">Sign In</button>
+    <script>
+        function signIn() {
+            var usernameInput = document.getElementById("usernameInput").value;
+            var passwordInput = document.getElementById("passwordInput").value;
+            var newUrl = '?user=' + encodeURIComponent(usernameInput);
+            var endUrl = "/home/b" + newUrl;
+
+            window.location.replace(endUrl);
+        }
+    </script>
 </body>
-</hmtl>
+</html>

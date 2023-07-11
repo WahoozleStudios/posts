@@ -14,6 +14,36 @@
     <title>Home | posts</title>
 </head>
 <body>
-    <h1 align="center">Home - posts</h1>
+    <h1 align="center" id="homeTitle"></h1>
+    <script>
+        var params = new URLSearchParams(window.location.search);
+
+        var username = params.get('user');
+        console.log("User: " + username);
+
+        if(username == null) {
+            window.location.replace("/");
+        }
+
+        var homeTitleId = document.getElementById("homeTitle");
+        homeTitleId.textContent = "Hello " + username;
+
+        var currentDate = new Date();
+        var currentHour = currentDate.getHours();
+        var timeOfDay;
+
+        if (currentHour >= 5 && currentHour < 12) {
+        timeOfDay = "Morning";
+        } else if (currentHour >= 12 && currentHour < 18) {
+        timeOfDay = "Afternoon";
+        } else {
+        timeOfDay = "Night";
+        }
+
+        console.log("It's currently " + timeOfDay);
+        var homeTitleId = document.getElementById("homeTitle");
+        homeTitleId.textContent = "Good "+ timeOfDay + ", "+username;
+
+    </script>
 </body>
 </html>
