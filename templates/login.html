@@ -11,27 +11,29 @@
         body {
             font-family: "Assistant", sans-serif;
             background-color: #ececec;
-            text-align: center; /* Added text-align center to align content */
+            text-align: center; 
         }
         h1 {
-            margin-top: 50px; /* Added margin-top for better positioning */
+            margin-top: 50px; 
         }
         input {
-            margin: 10px; /* Added margin for better spacing */
-            padding: 5px; /* Added padding for better appearance */
+            margin: 10px; 
+            padding: 5px; 
         }
         button {
-            padding: 10px 20px; /* Added padding for better appearance */
+            padding: 10px 20px; 
         }
     </style>
 </head>
 <body>
     <h1>Login - posts</h1>
     <input type="text" id="usernameInput" placeholder="Username">
-    <br> <!-- Added line break for better spacing -->
+    <br> 
     <input type="password" id="passwordInput" placeholder="Password">
-    <br> <!-- Added line break for better spacing -->
+    <br> 
     <button id="signIn" onclick="signIn()">Sign In</button>
+    <br><br>
+    <button id="signUpLink" onclick="signUpLink()">Don't have an account? Sign Up Here</button>
     <script>
         function signIn() {
             var usernameInput = document.getElementById("usernameInput").value;
@@ -41,11 +43,16 @@
             } else {
                 console.log("Incorrect Password or Username");
             }
+        }
 
-            function send() {
-                var newUrl = '/?user=' + encodeURIComponent(usernameInput);
-                window.location.href = newUrl;
-            }
+        function send() {
+            var usernameInput = document.getElementById("usernameInput").value;
+            var newUrl = '/?user=' + encodeURIComponent(usernameInput);
+            window.location.href = newUrl;
+        }
+
+        function signUpLink() {
+            window.location.href = "/signup";
         }
     </script>
 </body>
