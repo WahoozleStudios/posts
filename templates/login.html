@@ -36,9 +36,22 @@
         function signIn() {
             var usernameInput = document.getElementById("usernameInput").value;
             var passwordInput = document.getElementById("passwordInput").value;
-            var newUrl = '/home/b?user=' + encodeURIComponent(usernameInput); // Modified URL construction
+            if(usernameInput=="zacmoon"&&passwordInput=="chelmer27"){
+                send()
+            }
+            /*
+            if(usernameInput==""&&passwordInput==""){
+                send()
+            }
+            */
+            else{
+                console.log("Incorrect Password or Username")
+            }
 
-            window.location.href = newUrl; // Replaced window.location.replace with window.location.href
+            function send(){
+                var newUrl = '/home/b?user=' + encodeURIComponent(usernameInput); // Modified URL construction
+                window.location.href = newUrl; 
+            }
         }
     </script>
 </body>
