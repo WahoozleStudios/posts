@@ -12,6 +12,7 @@
         }
     </style>
     <title>Home | posts</title>
+    <link rel="icon" href="/templates/static/imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <h1 align="center" id="homeTitle"><b><u></u></b></h1>
@@ -29,12 +30,13 @@
             var timeOfDay;
 
             if (currentHour >= 5 && currentHour < 12) {
-                timeOfDay = "Morning";
+                timeOfDay = "Morning \u{1F305}"; // Morning Sun emoji
             } else if (currentHour >= 12 && currentHour < 20) {
-                timeOfDay = "Afternoon";
+                timeOfDay = "Afternoon \u{1F31E}"; // Sun with face emoji
             } else {
-                timeOfDay = "Night";
+                timeOfDay = "Night \u{1F319}"; // Crescent moon emoji
             }
+
 
             console.log("It's currently " + timeOfDay);
             homeTitleId.textContent = "Good " + timeOfDay + ", " + username;
