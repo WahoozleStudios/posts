@@ -21,7 +21,7 @@ def help():
     return render_template('help.html')
 
 @app.route('/home')
-def homeRedirect():
+def home():
     return render_template('home.html')
 
 if __name__ == '__main__':

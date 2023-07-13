@@ -36,24 +36,17 @@
         function signIn() {
             var usernameInput = document.getElementById("usernameInput").value;
             var passwordInput = document.getElementById("passwordInput").value;
-            if(usernameInput=="zacmoon"&&passwordInput=="chelmer27"){
-                send()
-            }
-            /*
-            if(usernameInput==""&&passwordInput==""){
-                send()
-            }
-            */
-            else{
-                console.log("Incorrect Password or Username")
+            if (usernameInput === "zacmoon" && passwordInput === "chelmer27") {
+                send();
+            } else {
+                console.log("Incorrect Password or Username");
             }
 
-            function send(){
-                var newUrl = '/home?user' + encodeURIComponent(usernameInput);
-                window.location.href = newUrl; 
+            function send() {
+                var newUrl = '/home?user=' + encodeURIComponent(usernameInput);
+                window.location.href = newUrl;
             }
         }
     </script>
 </body>
 </html>
-
