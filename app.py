@@ -15,9 +15,6 @@ def login():
 def signup():
     return render_template('signup.html')
 
-@app.route('/u/zacmoon')
-def u_zacmoon():
-    return "Zac Moon"
 @app.route('/u')
 def u():
     return render_template('redirects/u.html')

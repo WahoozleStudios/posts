@@ -10,12 +10,25 @@
             font-family: "Assistant", sans-serif;
             background-color: #ececec;
         }
+        #header {
+            width:100%;
+            background-color:white;
+            height:80px;
+            font-size:30px;
+        }
     </style>
-    <title>Home | posts</title>
     <link rel="icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}" type="image/x-icon">
+    <title>Home | posts</title>
 </head>
 <body>
-    <h1 align="center" id="homeTitle"><b><u></u></b></h1>
+    <div id="header">
+        <h1 align="center" id="homeTitle"><b><u></u></b></h1>
+    </div>
+    <h4 align="center">No Content Available Yet...... Sorry</h4>
+
+
+
+
     <script>
         var params = new URLSearchParams(window.location.search);
         var username = params.get('user');
