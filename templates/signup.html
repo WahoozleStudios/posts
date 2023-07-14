@@ -17,6 +17,10 @@
             height:70px;
             font-size: 50px;
         }
+        #signUpBtn {
+            width:460px;
+            height:55px;
+        }
     </style>
 </head>
 <body>
@@ -53,7 +57,7 @@
 
             console.log("Username: " + username);
             console.log("Password: " + password);
-            if(username=null && password == null){
+            if(username==="" && password === ""){
                 console.log("Password and Username Input Empty.")
             }
             else if(username === "") {
