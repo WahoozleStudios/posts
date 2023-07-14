@@ -53,13 +53,15 @@
 
             console.log("Username: " + username);
             console.log("Password: " + password);
-
-            if(username === "") {
+            if(username=null && password == null){
+                console.log("Password and Username Input Empty.")
+            }
+            else if(username === "") {
                 console.log("Username Field Empty");
                 return;
             }
              
-            if(password === "") {
+            else if(password === "") {
                 console.log("Password Field Empty");
                 return;
             }
