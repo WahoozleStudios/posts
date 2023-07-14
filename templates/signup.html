@@ -31,9 +31,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script> 
 
     <script>
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
-
         const firebaseConfig = {
             apiKey: "AIzaSyD5D7jFl0PCk8WDXMDZJF2zmEAv_nCo6tU",
             authDomain: "postswebapp.firebaseapp.com",
@@ -44,27 +41,43 @@
             measurementId: "G-YL0RJN2N0V"
         };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-        function signUp(){
-            var usernameInputFieldId = document.getElementById("usernameInputField");
-            var passwordInputFieldId = document.getElementById("passwordInputField");
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        function signUp() {
+            var usernameInputField = document.getElementById("usernameInputField");
+            var passwordInputField = document.getElementById("passwordInputField");
              
-            var username = usernameInputFieldId.value;
-            var password = passwordInputFieldId.value;
+            var username = usernameInputField.value;
+            var password = passwordInputField.value;
 
-            console.log("Username : "+username);
-            console.log("Password : "+password);
-            if(username==null){
-                console.log("Username Field Empty")
-            } 
-            if(password==null){
-                console.log("Password Field Empty")
-            }
-            else{
+            console.log("Username: " + username);
+            console.log("Password: " + password);
 
+            if(username === "") {
+                console.log("Username Field Empty");
+                return;
             }
+             
+            if(password === "") {
+                console.log("Password Field Empty");
+                return;
+            }
+
+            // Save user data to Firestore
+            db.collection("users").add({
+                username: username,
+                password: password
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                // Clear input fields
+                usernameInputField.value = "";
+                passwordInputField.value = "";
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            });
         }
     </script>
 </body>
