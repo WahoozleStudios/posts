@@ -64,20 +64,19 @@
                 return;
             }
 
-            // Save user data to Firestore
-            db.collection("users").add({
+            db.collection("users").doc(username).set({
                 username: username,
                 password: password
             })
-            .then(function(docRef) {
-                console.log("Document written with ID: ", docRef.id);
-                // Clear input fields
+            .then(function() {
+                console.log("Document written with ID: ", username);
                 usernameInputField.value = "";
                 passwordInputField.value = "";
             })
             .catch(function(error) {
                 console.error("Error adding document: ", error);
             });
+
         }
     </script>
 </body>
