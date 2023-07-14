@@ -63,6 +63,7 @@
                 console.log("Password Field Empty");
                 return;
             }
+            const usersCollection = firebase.firestore().collection("users");
 
             db.collection("users").doc(username).set({
                 username: username,
@@ -72,11 +73,15 @@
                 console.log("Document written with ID: ", username);
                 usernameInputField.value = "";
                 passwordInputField.value = "";
+                function send() {
+                var usernameInput = document.getElementById("usernameInput").value;
+                var newUrl = '/?user=' + encodeURIComponent(usernameInput);
+                window.location.href = newUrl;
+        }
             })
             .catch(function(error) {
                 console.error("Error adding document: ", error);
-            });
-
+            })
         }
     </script>
 </body>
