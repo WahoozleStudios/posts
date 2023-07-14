@@ -64,6 +64,34 @@
         function signOut(){
             window.location.replace('/login')
         }
+        const words = [
+            "the", "be", "to", "of", "and", "a", "in", "that", "have", "I",
+            "it", "for", "not", "on", "with", "he", "as", "you", "do", "at",
+            "this", "but", "his", "by", "from", "they", "we", "say", "her", "she",
+            "or", "an", "will", "my", "one", "all", "would", "there", "their", "what",
+            "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
+            "when", "make", "can", "like", "time", "no", "just", "him", "know", "take",
+            "person", "into", "year", "your", "good", "some", "could", "them", "see", "other",
+        ];
+        function getRandomWords(numberOfWords) {
+            const randomWords = [];
+            const wordsCopy = [...words]; 
+
+            for (let i = 0; i < numberOfWords; i++) {
+                const randomIndex = Math.floor(Math.random() * wordsCopy.length); 
+                const word = wordsCopy[randomIndex]; 
+
+                randomWords.push(word); 
+                wordsCopy.splice(randomIndex, 1); 
+            }
+
+            return randomWords;
+        }
+
+        const generatedWord1 = getRandomWords(1);
+        const generatedWord2 = getRandomWords(1);
+        console.log("Word 1: "+generatedWord1);
+        console.log("Word 2: "+generatedWord2)
     </script>
 </body>
 </html>
