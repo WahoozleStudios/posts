@@ -22,15 +22,32 @@
 <body>
     <h1 align="center">Sign Up - posts</h1>
     <div id="inputs"align="center">
-        <input class="inputs" id="usernameInput" placeholder="Username :">
-        <br><br><input class="inputs" id="passwordInput" placeholder="Password :">
-        <br><br><input class="inputs" id ="firstNameInput" placeholder="First Name :">
-        <br><br><input class="inputs" id="lastNameInput" placeholder="Last Name :">
-        <br><br><input class="inputs" id="emailInput" placeholder="Email :">
+        <input class="inputs" id="usernameInputField" placeholder="Username :">
+        <br><br><input class="inputs" id="passwordInputField" placeholder="Password :">
+        <br><br><button onclick="signUp()" id="signUpBtn">Sign Up</button>
     </div>
-    <button onclick="signUp()" id="signUpBtn">Sign Up</button>
 
 
-    <script src="signup.js"></script>
+    <script>
+        function signUp(){
+            var usernameInputFieldId = document.getElementById("usernameInputField");
+            var passwordInputFieldId = document.getElementById("passwordInputField");
+             
+            var username = usernameInputFieldId.value;
+            var password = passwordInputFieldId.value;
+
+            console.log("Username : "+username);
+            console.log("Password : "+password);
+            if(username==null){
+                console.log("Username Field Empty")
+            } 
+            if(password==null){
+                console.log("Password Field Empty")
+            }
+            else{
+                
+            }
+        }
+    </script>
 </body>
 </html>

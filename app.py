@@ -4,19 +4,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def base():
-    return render_template('home/home.html')
+    return render_template('home.html')
 
 @app.route('/login')
 def login():
-    return render_template('login/login.html')
+    return render_template('login.html')
 
 @app.route('/signup')
 def signup():
-    return render_template('signup/signup.html')
-
-@app.route('/u')
-def u():
-    return render_template('redirects/u.html')
+    return render_template('signup.html')
 
 @app.errorhandler(404)
 def page_not_found(error):
