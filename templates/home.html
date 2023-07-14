@@ -15,6 +15,16 @@
             background-color:white;
             height:80px;
             font-size:30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #signOutButton {
+            height:80px;
+            width:80px;
+            font-size:35px;
+            background-color:white;
+            border-color: white;
         }
     </style>
     <link rel="icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}" type="image/x-icon">
@@ -23,11 +33,9 @@
 <body>
     <div id="header">
         <h1 align="center" id="homeTitle"><b><u></u></b></h1>
+        <button id="signOutButton" onclick="signOut()">Sign Out</button>
     </div>
     <h4 align="center">No Content Available Yet...... Sorry</h4>
-
-
-
 
     <script>
         var params = new URLSearchParams(window.location.search);
@@ -50,9 +58,11 @@
                 timeOfDay = "Evening \u{1F319}"; 
             }
 
-
             console.log("It's currently " + timeOfDay);
             homeTitleId.textContent = "Good " + timeOfDay + ", " + username;
+        }
+        function signOut(){
+            window.location.replace('/login')
         }
     </script>
 </body>
